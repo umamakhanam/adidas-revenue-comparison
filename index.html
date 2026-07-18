@@ -206,7 +206,8 @@ footer a{color:var(--teal);text-decoration:none}
           <tr><th>Service</th><th>Client Fee (EUR)</th><th>Client Fee (GBP)</th><th>CIBT (60%)</th><th>Cozm (40%)</th></tr>
         </thead>
         <tbody>
-          <tr><td>A1 Certificate</td><td class="num">&euro;35.00</td><td class="num">&pound;30.80</td><td class="num">&pound;18.48</td><td class="num">&pound;12.32</td></tr>
+          <tr><td>A1 &mdash; Article 12 (posting)</td><td class="num">&euro;35.00</td><td class="num">&pound;30.80</td><td class="num">&pound;18.48</td><td class="num">&pound;12.32</td></tr>
+          <tr><td>A1 &mdash; Article 13 (multi-state)</td><td class="num">&euro;35.00</td><td class="num">&pound;30.80</td><td class="num">&pound;18.48</td><td class="num">&pound;12.32</td></tr>
         </tbody>
       </table>
     </div>
@@ -225,15 +226,12 @@ footer a{color:var(--teal);text-decoration:none}
       <div class="comp-body">
         <table>
           <thead><tr><th style="background:transparent;color:var(--grey)">Service</th><th style="background:transparent;color:var(--grey)">Cases</th><th style="background:transparent;color:var(--grey)">Rate</th><th style="background:transparent;color:var(--grey)">Revenue</th></tr></thead>
-          <tbody>
-            <tr><td>A1 (Art 12 + 13)</td><td class="num">997</td><td class="num">&euro;35</td><td class="num">&euro;34,895</td></tr>
-            <tr class="total-row"><td colspan="3">Client pays</td><td class="num">&euro;34,895</td></tr>
-          </tbody>
+          <tbody id="cibt-tbody"></tbody>
         </table>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eef3f5;">
           <div class="big-label">Cozm Revenue (40% share)</div>
-          <div class="big-number" style="color:var(--grey);">&euro;13,958</div>
-          <div style="font-size:.76rem;color:var(--grey);">997 A1 cases &times; &euro;35 &times; 40%</div>
+          <div class="big-number" style="color:var(--grey);" id="cibt-cozm">&euro;0</div>
+          <div style="font-size:.76rem;color:var(--grey);" id="cibt-detail"></div>
         </div>
       </div>
     </div>
@@ -255,19 +253,20 @@ footer a{color:var(--teal);text-decoration:none}
   </div>
 
   <div class="result-box green">
-    <h3>Net Impact for Cozm</h3>
+    <h3 style="font-size:1rem;">What Cozm Gains by Going Direct</h3>
     <div class="stat-row">
-      <span class="stat-label">Revenue uplift (direct vs CIBT)</span>
+      <span class="stat-label">Cozm revenue uplift (100% direct vs 40% CIBT share)</span>
       <span class="stat-value positive" id="diff-abs"></span>
     </div>
     <div class="stat-row">
-      <span class="stat-label">Percentage increase</span>
+      <span class="stat-label">Percentage increase in Cozm revenue</span>
       <span class="stat-value positive" id="diff-pct"></span>
     </div>
     <div class="stat-row">
-      <span class="stat-label">Client cost change</span>
+      <span class="stat-label">adidas cost change</span>
       <span class="stat-value" id="diff-client"></span>
     </div>
+    <p style="font-size:.76rem;color:var(--grey);margin-top:10px;font-style:italic;">Under CIBT, Cozm receives only 40% of the A1 fee. Going direct means Cozm retains 100% of A1 revenue <em>and</em> unlocks PWN revenue (1,727 cases) that CIBT does not provide.</p>
   </div>
   <p class="note" id="split-note"></p>
 </section>
@@ -313,11 +312,11 @@ footer a{color:var(--teal);text-decoration:none}
     </div>
     <div>
       <div class="slider-group">
-        <label>A1 split: % Article 12 <span id="vS">53% Art 12 / 47% Art 13</span></label>
-        <input type="range" id="sS" min="0" max="100" step="1" value="53">
+        <label>A1 split: % Article 12 <span id="vS">50% Art 12 / 50% Art 13</span></label>
+        <input type="range" id="sS" min="0" max="100" step="1" value="50">
         <div class="slider-range"><span>100% Art 13</span><span>100% Art 12</span></div>
       </div>
-      <p class="note" style="margin-top:0;">Default split (53% Art 12 / 47% Art 13) based on actual adidas application data from the past 2 years (766 single-destination, 679 multi-destination out of 1,445 total).</p>
+      <p class="note" style="margin-top:0;">Default 50/50 split for modelling purposes. Actual adidas data (past 2 years): 53% Art 12 / 47% Art 13. Adjustable via slider.</p>
     </div>
   </div>
 
@@ -333,7 +332,7 @@ footer a{color:var(--teal);text-decoration:none}
         <div class="rc-value" id="sim-cozm">&euro;0</div>
       </div>
       <div class="res-card">
-        <div class="rc-label">vs CIBT (&euro;13,958)</div>
+        <div class="rc-label">vs CIBT (40% share)</div>
         <div class="rc-value" id="sim-vs">&euro;0</div>
       </div>
     </div>
@@ -358,10 +357,10 @@ footer a{color:var(--teal);text-decoration:none}
   <div class="container assumptions" style="max-width:740px;">
     <ol>
       <li><strong>Volumes</strong> taken directly from the adidas-provided estimates (July 2026).</li>
-      <li><strong>CIBT A1 rate (&euro;35)</strong> applied to all 997 A1/CoC cases &mdash; CIBT charges a flat fee regardless of Article 12/13.</li>
+      <li><strong>CIBT A1 rate (&euro;35)</strong> applied to both Article 12 and Article 13 cases (997 total A1/CoC). CIBT charges the same flat fee for both article types.</li>
       <li><strong>PWN</strong> &mdash; CIBT does not provide PWN services for adidas. Cozm offers PWN directly at &euro;50 per case (1,727 cases).</li>
       <li><strong>Cozm CIBT share</strong> calculated at 40% of the EUR fee (60/40 partner split). Applies to A1/CoC only.</li>
-      <li><strong>Article 12/13 split</strong> derived from actual adidas application data (past 2 years): 53% Article 12 (single-destination) / 47% Article 13 (multi-destination). Adjustable via the slider.</li>
+      <li><strong>Article 12/13 split</strong> defaults to 50/50 for modelling. Real adidas data (past 2 years): 766 single-destination (Art 12) / 679 multi-destination (Art 13) = 53%/47%. Adjustable via the slider.</li>
       <li><strong>Standard pricing</strong> &mdash; Article 12: &euro;25, Article 13: &euro;35, PWN: &euro;50. Cozm services the client directly and retains 100%.</li>
       <li>All figures are annual (p.a.) and in EUR unless stated otherwise.</li>
     </ol>
@@ -407,25 +406,38 @@ function update(){
   const rv12=c12*p12,rv13=c13*p13,rvP=TP*pP;
   const tot=rv12+rv13+rvP;
 
-  // Std table
+  // CIBT card (Scenario A) — dynamic with Art 12 / Art 13 split
+  const cibt12=c12*CA,cibt13=c13*CA,cibtTot=cibt12+cibt13,cibtCozm=cibtTot*CS;
+  let cb='';
+  cb+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${CA}</td><td class="num">${f(cibt12)}</td></tr>`;
+  cb+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${CA}</td><td class="num">${f(cibt13)}</td></tr>`;
+  cb+=`<tr style="font-size:.78rem;color:var(--grey);font-style:italic;"><td colspan="4">PWN \u2014 not offered by CIBT</td></tr>`;
+  cb+=`<tr class="total-row"><td colspan="3">Client pays</td><td class="num">${f(cibtTot)}</td></tr>`;
+  document.getElementById('cibt-tbody').innerHTML=cb;
+  document.getElementById('cibt-cozm').textContent=f(cibtCozm);
+  document.getElementById('cibt-detail').textContent='Art 12: '+f(cibt12*CS)+' \u00B7 Art 13: '+f(cibt13*CS)+' ('+c12+' + '+c13+' cases \u00D7 \u20AC'+CA+' \u00D7 40%)';
+
+  // Std table (Scenario B — Cozm Direct)
   let h='';
-  if(c12>0)h+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
-  if(c13>0)h+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
+  h+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
+  h+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
   h+=`<tr><td>PWN</td><td class="num">${TP.toLocaleString('en-IE')}</td><td class="num">\u20AC${pP}</td><td class="num">${f(rvP)}</td></tr>`;
-  h+=`<tr class="total-row"><td colspan="3">Client pays / Cozm revenue</td><td class="num">${f(tot)}</td></tr>`;
+  h+=`<tr class="total-row"><td colspan="3">Client pays / Cozm revenue (100%)</td><td class="num">${f(tot)}</td></tr>`;
   document.getElementById('std-tbody').innerHTML=h;
   document.getElementById('std-total').textContent=f(tot);
-  const pts=[];
-  if(c12>0)pts.push('Art 12: '+f(rv12));
-  if(c13>0)pts.push('Art 13: '+f(rv13));
-  pts.push('PWN: '+f(rvP));
-  document.getElementById('std-detail').textContent=pts.join(' \u00B7 ');
+  document.getElementById('std-detail').textContent='Art 12: '+f(rv12)+' \u00B7 Art 13: '+f(rv13)+' \u00B7 PWN: '+f(rvP);
 
-  // Diff
-  const dA=tot-CCT,dP=(dA/CCT)*100,cD=tot-CLT;
+  // Diff — Cozm revenue uplift (direct 100% vs CIBT 40%)
+  const dA=tot-cibtCozm,dP=(dA/cibtCozm)*100;
+  // Client cost: what does adidas pay under Cozm Direct vs what they paid CIBT (A1 only)?
+  // Fair comparison: Cozm Direct covers A1+PWN, CIBT only A1 — so extra PWN cost is new scope, not a price increase
+  const cD=tot-cibtTot;
   const eA=document.getElementById('diff-abs');eA.textContent=fs(dA);eA.className='stat-value '+(dA>=0?'positive':'negative');
   const eP=document.getElementById('diff-pct');eP.textContent=p(dP);eP.className='stat-value '+(dA>=0?'positive':'negative');
-  const eC=document.getElementById('diff-client');eC.textContent=fs(cD)+' ('+p((cD/CLT)*100)+')';eC.className='stat-value '+(cD<=0?'positive':'negative');
+  const a1Only=rv12+rv13,a1Diff=a1Only-cibtTot;
+  const eC=document.getElementById('diff-client');
+  eC.textContent='A1 only: '+fs(a1Diff)+' \u00B7 incl. PWN: '+fs(cD);
+  eC.className='stat-value '+(a1Diff<=0?'positive':'negative');
   document.getElementById('split-note').textContent='A1 split: '+c12+' Article 12 ('+sS.value+'%) + '+c13+' Article 13 ('+(100-+sS.value)+'%). Adjustable in the Pricing Simulator.';
 
   // Country
@@ -443,14 +455,14 @@ function update(){
   // Sim
   document.getElementById('sim-client').textContent=f(tot);
   document.getElementById('sim-cozm').textContent=f(tot);
-  const vs=tot-CCT;
+  const vs=tot-cibtCozm;
   const vsE=document.getElementById('sim-vs');
-  vsE.textContent=fs(vs)+' ('+p((vs/CCT)*100)+')';
+  vsE.textContent=fs(vs)+' ('+p((vs/cibtCozm)*100)+')';
   vsE.className='rc-value '+(vs>=0?'positive':'negative');
 
   let st='';
-  if(c12>0)st+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
-  if(c13>0)st+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
+  st+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
+  st+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
   st+=`<tr><td>PWN</td><td class="num">${TP.toLocaleString('en-IE')}</td><td class="num">\u20AC${pP}</td><td class="num">${f(rvP)}</td></tr>`;
   st+=`<tr class="total-row"><td colspan="3">Total Cozm Revenue</td><td class="num">${f(tot)}</td></tr>`;
   document.getElementById('sim-tbody').innerHTML=st;
