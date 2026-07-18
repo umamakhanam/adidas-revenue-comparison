@@ -157,7 +157,7 @@ footer a{color:var(--teal);text-decoration:none}
   <p>adidas &mdash; A1/CoC &amp; PWN Compliance Services</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">12,919</div><div class="lbl">Est. Trips p.a.</div></div>
-    <div class="hero-stat"><div class="num">2,724</div><div class="lbl">Total Cases</div></div>
+    <div class="hero-stat"><div class="num">997</div><div class="lbl">A1/CoC Cases</div></div>
     <div class="hero-stat"><div class="num">5</div><div class="lbl">Destinations</div></div>
   </div>
   <div class="meta">Prepared July 2026 &middot; Confidential</div>
@@ -206,18 +206,17 @@ footer a{color:var(--teal);text-decoration:none}
         </thead>
         <tbody>
           <tr><td>A1 Certificate</td><td class="num">&euro;35.00</td><td class="num">&pound;30.80</td><td class="num">&pound;18.48</td><td class="num">&pound;12.32</td></tr>
-          <tr><td>PWN (MSW)</td><td class="num">&euro;65.00</td><td class="num">&pound;57.20</td><td class="num">&pound;34.32</td><td class="num">&pound;22.88</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="note" style="text-align:center;">Under the CIBT arrangement, Cozm retains only 40% of the fee charged to the client.</p>
+    <p class="note" style="text-align:center;">Under the CIBT arrangement, Cozm retains only 40% of the fee charged to the client. PWN is not covered by CIBT.</p>
   </div>
 </section>
 
 <!-- 3. COMPARISON -->
 <section>
   <h2>Revenue Comparison</h2>
-  <p class="sub">Current CIBT partnership vs Cozm direct pricing</p>
+  <p class="sub">Current CIBT partnership vs Cozm direct pricing &mdash; A1/CoC only (CIBT does not provide PWN for adidas)</p>
 
   <div class="comp-grid">
     <div class="comp-card a">
@@ -227,14 +226,13 @@ footer a{color:var(--teal);text-decoration:none}
           <thead><tr><th style="background:transparent;color:var(--grey)">Service</th><th style="background:transparent;color:var(--grey)">Cases</th><th style="background:transparent;color:var(--grey)">Rate</th><th style="background:transparent;color:var(--grey)">Revenue</th></tr></thead>
           <tbody>
             <tr><td>A1 (Art 12 + 13)</td><td class="num">997</td><td class="num">&euro;35</td><td class="num">&euro;34,895</td></tr>
-            <tr><td>PWN</td><td class="num">1,727</td><td class="num">&euro;65</td><td class="num">&euro;112,255</td></tr>
-            <tr class="total-row"><td colspan="3">Client pays</td><td class="num">&euro;147,150</td></tr>
+            <tr class="total-row"><td colspan="3">Client pays</td><td class="num">&euro;34,895</td></tr>
           </tbody>
         </table>
         <div style="margin-top:14px;padding-top:12px;border-top:1px solid #eef3f5;">
           <div class="big-label">Cozm Revenue (40% share)</div>
-          <div class="big-number" style="color:var(--grey);">&euro;58,860</div>
-          <div style="font-size:.76rem;color:var(--grey);">A1: &euro;13,958 &middot; PWN: &euro;44,902</div>
+          <div class="big-number" style="color:var(--grey);">&euro;13,958</div>
+          <div style="font-size:.76rem;color:var(--grey);">997 A1 cases &times; &euro;35 &times; 40%</div>
         </div>
       </div>
     </div>
@@ -281,7 +279,7 @@ footer a{color:var(--teal);text-decoration:none}
     <div class="card" style="padding:0;overflow:hidden;border-radius:12px;">
       <table>
         <thead>
-          <tr><th>Country</th><th>PWN</th><th>A1/CoC</th><th>CIBT (client)</th><th>Cozm (40%)</th><th>Standard (100%)</th><th>Cozm Uplift</th></tr>
+          <tr><th>Country</th><th>A1/CoC Cases</th><th>CIBT (client)</th><th>Cozm (40%)</th><th>Standard (100%)</th><th>Cozm Uplift</th></tr>
         </thead>
         <tbody id="country-tbody"></tbody>
       </table>
@@ -306,11 +304,6 @@ footer a{color:var(--teal);text-decoration:none}
         <input type="range" id="s13" min="10" max="80" step="1" value="35">
         <div class="slider-range"><span>&euro;10</span><span>&euro;80</span></div>
       </div>
-      <div class="slider-group">
-        <label>PWN (Posted Worker Notification) <span id="vP">&euro;50</span></label>
-        <input type="range" id="sP" min="20" max="120" step="1" value="50">
-        <div class="slider-range"><span>&euro;20</span><span>&euro;120</span></div>
-      </div>
     </div>
     <div>
       <div class="slider-group">
@@ -334,7 +327,7 @@ footer a{color:var(--teal);text-decoration:none}
         <div class="rc-value" id="sim-cozm">&euro;0</div>
       </div>
       <div class="res-card">
-        <div class="rc-label">vs CIBT (&euro;58,860)</div>
+        <div class="rc-label">vs CIBT (&euro;13,958)</div>
         <div class="rc-value" id="sim-vs">&euro;0</div>
       </div>
     </div>
@@ -360,10 +353,10 @@ footer a{color:var(--teal);text-decoration:none}
     <ol>
       <li><strong>Volumes</strong> taken directly from the adidas-provided estimates (July 2026).</li>
       <li><strong>CIBT A1 rate (&euro;35)</strong> applied to all 997 A1/CoC cases &mdash; CIBT charges a flat fee regardless of Article 12/13.</li>
-      <li><strong>CIBT PWN rate (&euro;65)</strong> uses the MSW product fee from the existing CIBT rate card.</li>
+      <li><strong>PWN not included</strong> &mdash; CIBT does not provide PWN services for adidas. This comparison covers A1/CoC only.</li>
       <li><strong>Cozm CIBT share</strong> calculated at 40% of the EUR fee (60/40 partner split).</li>
       <li><strong>Article 12/13 split</strong> not available in volume data. Default: 100% Article 12 (&euro;25) for the most conservative standard-pricing figure.</li>
-      <li><strong>Standard pricing</strong> assumes Cozm services the client directly and retains 100%.</li>
+      <li><strong>Standard pricing</strong> &mdash; Article 12: &euro;25, Article 13: &euro;35. Cozm services the client directly and retains 100%.</li>
       <li>All figures are annual (p.a.) and in EUR unless stated otherwise.</li>
     </ol>
   </div>
@@ -377,49 +370,46 @@ footer a{color:var(--teal);text-decoration:none}
 
 <script>
 const C=[
-  {n:'Germany',p:0,a:611},
-  {n:'Netherlands',p:1071,a:157},
-  {n:'France',p:161,a:126},
-  {n:'Portugal',p:365,a:59},
-  {n:'Switzerland',p:129,a:44}
+  {n:'Germany',a:611},
+  {n:'Netherlands',a:157},
+  {n:'France',a:126},
+  {n:'Portugal',a:59},
+  {n:'Switzerland',a:44}
 ];
-const TP=1727,TA=997;
-const CA=35,CP=65,CS=0.40;
-const CCT=(TA*CA+TP*CP)*CS;
-const CLT=TA*CA+TP*CP;
+const TA=997;
+const CA=35,CS=0.40;
+const CCT=(TA*CA)*CS;
+const CLT=TA*CA;
 
 function f(n){return '\u20AC'+Math.round(n).toLocaleString('en-IE')}
 function fs(n){return (n>=0?'+':'')+f(n)}
 function p(n){return (n>=0?'+':'')+n.toFixed(1)+'%'}
 
 const s12=document.getElementById('s12'),s13=document.getElementById('s13'),
-      sP=document.getElementById('sP'),sS=document.getElementById('sS');
+      sS=document.getElementById('sS');
 
 function update(){
-  const p12=+s12.value,p13=+s13.value,pP=+sP.value;
+  const p12=+s12.value,p13=+s13.value;
   const r12=+sS.value/100,r13=1-r12;
   const c12=Math.round(TA*r12),c13=TA-c12;
 
   document.getElementById('v12').textContent='\u20AC'+p12;
   document.getElementById('v13').textContent='\u20AC'+p13;
-  document.getElementById('vP').textContent='\u20AC'+pP;
   document.getElementById('vS').textContent=sS.value==100?'100% Art 12':sS.value==0?'100% Art 13':sS.value+'% Art 12 / '+(100-+sS.value)+'% Art 13';
 
-  const rv12=c12*p12,rv13=c13*p13,rvP=TP*pP;
-  const tot=rv12+rv13+rvP;
+  const rv12=c12*p12,rv13=c13*p13;
+  const tot=rv12+rv13;
 
   // Std table
   let h='';
   if(c12>0)h+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
   if(c13>0)h+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
-  h+=`<tr><td>PWN</td><td class="num">${TP.toLocaleString('en-IE')}</td><td class="num">\u20AC${pP}</td><td class="num">${f(rvP)}</td></tr>`;
   h+=`<tr class="total-row"><td colspan="3">Client pays / Cozm revenue</td><td class="num">${f(tot)}</td></tr>`;
   document.getElementById('std-tbody').innerHTML=h;
   document.getElementById('std-total').textContent=f(tot);
   const pts=[];
   if(c12>0)pts.push('Art 12: '+f(rv12));
   if(c13>0)pts.push('Art 13: '+f(rv13));
-  pts.push('PWN: '+f(rvP));
   document.getElementById('std-detail').textContent=pts.join(' \u00B7 ');
 
   // Diff
@@ -433,12 +423,12 @@ function update(){
   let ct='',tCR=0,tCC=0,tSR=0;
   C.forEach(c=>{
     const ca12=Math.round(c.a*r12),ca13=c.a-ca12;
-    const cr=c.a*CA+c.p*CP,cc=cr*CS;
-    const sr=ca12*p12+ca13*p13+c.p*pP;
+    const cr=c.a*CA,cc=cr*CS;
+    const sr=ca12*p12+ca13*p13;
     const up=sr-cc;tCR+=cr;tCC+=cc;tSR+=sr;
-    ct+=`<tr><td>${c.n}</td><td class="num">${c.p.toLocaleString('en-IE')}</td><td class="num">${c.a.toLocaleString('en-IE')}</td><td class="num">${f(cr)}</td><td class="num">${f(cc)}</td><td class="num">${f(sr)}</td><td class="num ${up>=0?'positive':'negative'}">${fs(up)}</td></tr>`;
+    ct+=`<tr><td>${c.n}</td><td class="num">${c.a.toLocaleString('en-IE')}</td><td class="num">${f(cr)}</td><td class="num">${f(cc)}</td><td class="num">${f(sr)}</td><td class="num ${up>=0?'positive':'negative'}">${fs(up)}</td></tr>`;
   });
-  ct+=`<tr class="total-row"><td>Total</td><td class="num">${TP.toLocaleString('en-IE')}</td><td class="num">${TA.toLocaleString('en-IE')}</td><td class="num">${f(tCR)}</td><td class="num">${f(tCC)}</td><td class="num">${f(tSR)}</td><td class="num ${(tSR-tCC)>=0?'positive':'negative'}">${fs(tSR-tCC)}</td></tr>`;
+  ct+=`<tr class="total-row"><td>Total</td><td class="num">${TA.toLocaleString('en-IE')}</td><td class="num">${f(tCR)}</td><td class="num">${f(tCC)}</td><td class="num">${f(tSR)}</td><td class="num ${(tSR-tCC)>=0?'positive':'negative'}">${fs(tSR-tCC)}</td></tr>`;
   document.getElementById('country-tbody').innerHTML=ct;
 
   // Sim
@@ -452,7 +442,6 @@ function update(){
   let st='';
   if(c12>0)st+=`<tr><td>A1 \u2014 Article 12</td><td class="num">${c12.toLocaleString('en-IE')}</td><td class="num">\u20AC${p12}</td><td class="num">${f(rv12)}</td></tr>`;
   if(c13>0)st+=`<tr><td>A1 \u2014 Article 13</td><td class="num">${c13.toLocaleString('en-IE')}</td><td class="num">\u20AC${p13}</td><td class="num">${f(rv13)}</td></tr>`;
-  st+=`<tr><td>PWN</td><td class="num">${TP.toLocaleString('en-IE')}</td><td class="num">\u20AC${pP}</td><td class="num">${f(rvP)}</td></tr>`;
   st+=`<tr class="total-row"><td colspan="3">Total Cozm Revenue</td><td class="num">${f(tot)}</td></tr>`;
   document.getElementById('sim-tbody').innerHTML=st;
 
@@ -464,7 +453,7 @@ function update(){
   else{tb.style.background='linear-gradient(135deg,var(--red),#a03030)';}
 }
 
-[s12,s13,sP,sS].forEach(s=>s.addEventListener('input',update));
+[s12,s13,sS].forEach(s=>s.addEventListener('input',update));
 update();
 </script>
 </body>
